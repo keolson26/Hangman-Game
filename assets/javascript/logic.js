@@ -19,12 +19,7 @@ var rightGuess = 0;
 //If var = length of word, the user guess is considered wrong
 var wrongCounter = 0;
 
-//Functions
-var getPic = document.getElementById("getPic");
-		var picUpdate = document.createElement("img");
-		getPic.innerHTML = "src = assets/images/"+pic+".jpg";
-		getPic.appendChild(picUpdate);			
-
+//Functions		
 
 var getWin = document.getElementById("getWin");
 			var winUpdate = document.createElement("div");
@@ -110,16 +105,13 @@ document.onkeyup = function startgame(event) {
 					}
 
 					else if (rightGuess === emptyWord.length) {
+						document.getElementById("getPic").src = "assets/images/"+pic+".jpg";
 						alert("Win");
 						wins++
-
-						var getPic = document.getElementById("getPic");
-						var picUpdate = document.createElement("img");
-						getPic.innerHTML = "src = assets/images/"+pic+".jpg";
-						getPic.appendChild(picUpdate);			
 					}
 
 					else {
+						document.getElementById("getPic").src = "assets/images/loss.jpg";
 						alert("Lose");
 						losses++;
 					}

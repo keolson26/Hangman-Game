@@ -36,3 +36,9 @@ h3 {
 .panel {
 	background-color: #f0f8ff;
 }
+
+#getPic {
+	width: 420px;
+	height: 250px;
+}
+
