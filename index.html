@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+
+	<title>Homework Assignment 3 - Hangman Game</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Pacifico|Shadows+Into+Light" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+	<div class="jumbotron bg-primary text-center">
+		<h1>Hangman Game:</h1>
+		<h3>Travel Edition</h3>
+	</div>
+
+	<div class="row"></div>
+
+	<div class ="row">
+		<div class="col-md-6">
+			<div class="panel panel-default" class = "mainPanel">
+  				<div class="panel-body">
+					<img id="getPic" alt="placeholder"/>
+				</div>
+			</div>
+		</div>
+
+		<div class ="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h2>Press any key to begin!</h2>
+				
+					<div class="well well-lg" id="getWin"></div>
+				
+
+					<div class="well well-lg" id="getLoss"></div>
+		
+
+					<div class="well well-lg" id="wordDisp"></div>
+					
+					<div class="well well-lg" id= "guess1"></div>
+
+					<div class="well well-lg" id="usedLetters"> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="assets/javascript/logic.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--var word list [];
+
+declare variables - parameters to win, lose, etc.
+
+declare variables for win, loss, tie
+
+functions
+pick random word from word list
+
+use "split" to split word into individual letters
+
+test with console log
+
+reset guess and success counters
+
+push underscore into array for # of letters 
+
+create checking and scorekeeping functiongs
+
+create actual startgame function and actual play functions!>
+

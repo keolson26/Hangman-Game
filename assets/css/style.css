@@ -1,0 +1,38 @@
+body {
+
+	background-image: url("../images/background.jpg");
+}
+
+h1 {
+	font-family: 'Abril Fatface', cursive;
+	margin-top: 0px;
+	margin-left: 0px;
+	background-color: #f0f8ff;
+}
+
+h2 {
+	font-family: 'Abril Fatface', cursive;
+	text-align: center;
+	margin-bottom: 18px;
+	margin-top: 10px;
+}
+
+h3 {
+	font-family: 'Pacifico', cursive;
+	font-size: 45px;
+}
+
+.well {
+	text-align: center;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 25px;
+	background-color: #f0f8ff;
+}
+
+.jumbotron {
+	background-color: #f0f8ff;
+}
+
+.panel {
+	background-color: #f0f8ff;
+}
