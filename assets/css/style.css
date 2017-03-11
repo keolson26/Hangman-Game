@@ -35,10 +35,17 @@ h3 {
 
 .panel {
 	background-color: #f0f8ff;
+	text-align: center;
 }
 
 #getPic {
 	width: 420px;
 	height: 250px;
 }
+
+.btn {
+	margin-left: 150px;
+	font-size: 40px;
+}
+
 

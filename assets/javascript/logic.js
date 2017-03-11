@@ -49,109 +49,86 @@ var usedLetters = document.getElementById("usedLetters");
 //Function to select and display word for game
 document.onkeyup = function startgame(event) {
 
-
 	var starterLetter = event.key;
-
-    var gameWord = wordList[Math.floor(Math.random() * wordList.length)];
-    
+	var gameWord = wordList[Math.floor(Math.random() * wordList.length)];
     pic = gameWord;
-
-    console.log(gameWord);
-    
     var splitWord = gameWord.split("");
-    
-    console.log(splitWord);
 
     for (i = 0; i < splitWord.length; i++) {
     	emptyWord.push(" _ ");
     }	
-
+    	//Displays dashed word on screen
     	var wordDisp = document.getElementById("wordDisp");
 			var wordUpdate = document.createElement("div");
 			wordDisp.innerHTML =  emptyWord;
 			wordDisp.appendChild(wordUpdate);
 
+		//Function begin actual game play
     	document.onkeyup = function playgame(event) {
 
-			var userGuess = event.key;
-			
-					if (rightGuess < splitWord.length && guessAllow > 0) {
+					var userGuess = event.key;
+					//Determines if pressed key is contained in the game word
 
-					
-						for (i = 0; i < emptyWord.length; i++) {
+							for (i = 0; i < emptyWord.length; i++) {
 
-							if (userGuess === splitWord[i])
-							{
-								emptyWord.splice(i, 1, userGuess);
-								rightGuess++;
+								if (userGuess === splitWord[i] && rightGuess === (emptyWord.length-1))
+								{	
+									wins++;
+									emptyWord.splice(i, 1, userGuess);
+									rightGuess++;
+									document.getElementById("getPic").src = "assets/images/"+pic+".jpg";
+									alert("You win! Click Play Again");
+									
+								}
+								else if(userGuess === splitWord[i]) {
+									emptyWord.splice(i, 1, userGuess);
+									rightGuess++;
+									}
+								else {
+									wrongCounter++;
+									}		
 							}
 
-							else
-							{
-								wrongCounter++;
-								
-							}
-						}
+					if(wrongCounter===splitWord.length && guessAllow === 1) {
+							losses++;
+							document.getElementById("getPic").src = "assets/images/loss.jpg";
+							alert("Sorry, you lose! Click Play Again");		
+					}
 
-						if(wrongCounter===splitWord.length){
+					if(wrongCounter===splitWord.length){
 							guessAllow--;
 							wrongGuess.push(userGuess);
 							wrongCounter = 0;
-						}
-
-						else{
-							wrongCounter=0;
-						}
 					}
-
-					else if (rightGuess === emptyWord.length) {
-						document.getElementById("getPic").src = "assets/images/"+pic+".jpg";
-						alert("Win");
-						wins++
-					}
-
 					else {
-						document.getElementById("getPic").src = "assets/images/loss.jpg";
-						alert("Lose");
-						losses++;
+							wrongCounter=0;
 					}
-	
+					
 
-var getWin = document.getElementById("getWin");
-			var winUpdate = document.createElement("div");
-			getWin.innerHTML = "Wins: "+wins;
-			getWin.appendChild(winUpdate);
+				var getWin = document.getElementById("getWin");
+							var winUpdate = document.createElement("div");
+							getWin.innerHTML = "Wins: "+wins;
+							getWin.appendChild(winUpdate);
 
-var getLoss = document.getElementById("getLoss");
-			var lossUpdate = document.createElement("div");
-			getLoss.innerHTML = "Losses: "+ losses;
-			getLoss.appendChild(lossUpdate);
+				var getLoss = document.getElementById("getLoss");
+							var lossUpdate = document.createElement("div");
+							getLoss.innerHTML = "Losses: "+ losses;
+							getLoss.appendChild(lossUpdate);
 
-var guess1 = document.getElementById("guess1");
-			var guessUpdate = document.createElement("div");
-			guess1.innerHTML = "Guesses Left: "+ guessAllow;
-			guess1.appendChild(guessUpdate);
+				var guess1 = document.getElementById("guess1");
+							var guessUpdate = document.createElement("div");
+							guess1.innerHTML = "Guesses Left: "+ guessAllow;
+							guess1.appendChild(guessUpdate);
 
-var usedLetters = document.getElementById("usedLetters");
-			var letterUpdate = document.createElement("div");
-			usedLetters.innerHTML = "Used Letters: "+ wrongGuess;
-			usedLetters.appendChild(letterUpdate);
+				var usedLetters = document.getElementById("usedLetters");
+							var letterUpdate = document.createElement("div");
+							usedLetters.innerHTML = "Used Letters: "+ wrongGuess;
+							usedLetters.appendChild(letterUpdate);
 
-var wordDisp = document.getElementById("wordDisp");
-			var wordUpdate = document.createElement("div");
-			wordDisp.innerHTML =  emptyWord;
-			wordDisp.appendChild(wordUpdate);
-
-
-						console.log(userGuess);
-						console.log(emptyWord);
-						console.log(wrongGuess);
-						console.log(rightGuess);
-						console.log(guessAllow);
-						console.log(wrongCounter);
-						console.log(wins);
-						console.log(losses);
-		
+				var wordDisp = document.getElementById("wordDisp");
+							var wordUpdate = document.createElement("div");
+							wordDisp.innerHTML =  emptyWord;
+							wordDisp.appendChild(wordUpdate);
 	}	
 }
    
